@@ -1,6 +1,7 @@
-package com.antonyni.GreatWallChinese.domain.user.controllers;
+package com.antonyni.GreatWallChinese.domain.foodOptions.controllers;
 
 import com.antonyni.GreatWallChinese.domain.order.models.Order;
+import com.antonyni.GreatWallChinese.domain.user.controllers.UserController;
 import com.antonyni.GreatWallChinese.domain.user.exceptions.UserCreationException;
 import com.antonyni.GreatWallChinese.domain.user.exceptions.UserNotFoundException;
 import com.antonyni.GreatWallChinese.domain.user.models.User;
@@ -17,7 +18,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 import static com.antonyni.GreatWallChinese.domain.BaseControllerTest.asJsonString;
 import static org.hamcrest.core.Is.is;
@@ -27,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest(UserController.class)
 @ExtendWith(SpringExtension.class)
-public class UserControllerTests {
+public class FoodOptionsControllerTests {
 
     @MockBean
     private UserService userService;
@@ -141,7 +144,5 @@ public class UserControllerTests {
         mockMvc.perform(delete("/api/v1/UserRequests/{id}", randomId))
                 .andExpect(status().isNoContent());
     }
-
-
 
 }

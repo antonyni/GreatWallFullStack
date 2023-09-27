@@ -58,7 +58,6 @@ public class UserServiceImpl implements UserService{
     public User update(UUID id, User userDetails) throws UserNotFoundException {
         User user = getById(id);
         user.setEmail(userDetails.getEmail());
-        user.setPassword(userDetails.getPassword());
         user.setUsername(userDetails.getUsername());
         return userRepo.save(user);
 
