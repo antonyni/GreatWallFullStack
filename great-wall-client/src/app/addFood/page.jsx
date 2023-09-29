@@ -4,7 +4,7 @@ import * as orderRequestService from '../../services/OrderService';
 import * as foodRequestService from '../../services/FoodService';
 import * as foodOptionsRequestService from '../../services/FoodOptionsService';
 import * as foodChoicesRequestService from '../../services/FoodChoicesService';
-import { useHistory } from 'react-router-dom';
+import { useRouter } from 'next/navigation'
 
 import { useEffect, useState} from 'react';
 
@@ -16,14 +16,23 @@ const Home = () => {
     });
 
 
+    const router = useRouter();
+
+
 
 
     
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        foodRequestService.createFoodRequest(formData);
-        console.log(formData);
+        
+        try{
+            await foodRequestService.createFoodRequest(formData)
+            router.push('/admin');
+        }catch (error){
+             console.log(error.response.data);
+
+        }
     };
 
     const handleChange = (event) => {

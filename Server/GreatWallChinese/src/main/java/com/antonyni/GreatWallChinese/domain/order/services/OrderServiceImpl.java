@@ -40,6 +40,8 @@ public class OrderServiceImpl implements OrderService{
     public Order update(UUID id, Order orderDetails) throws OrderNotFoundException {
         Order order = getById(id);
         order.setItems(orderDetails.getItems());
+        order.setStatus(orderDetails.getStatus());
+        order.setTotal(orderDetails.getTotal());
         return orderRepo.save(order);
     }
 

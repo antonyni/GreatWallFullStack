@@ -48,9 +48,9 @@ public class OrderServiceImplTests {
         UUID id1 = UUID.randomUUID();
 
         randomId = UUID.randomUUID();
-        mockOrderInput = new Order(id1,10.20f,foodChoicesList);
+        mockOrderInput = new Order(id1,10.20f,"done",foodChoicesList);
         mockOrderInput.setId(randomId);
-        mockOrderResponse = new Order(id1,10.20f,foodChoicesList);
+        mockOrderResponse = new Order(id1,10.20f,"done",foodChoicesList);
         mockOrderResponse.setId(randomId);
 
     }

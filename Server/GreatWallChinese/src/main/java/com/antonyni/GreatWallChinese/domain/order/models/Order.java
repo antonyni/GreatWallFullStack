@@ -30,6 +30,9 @@ public class Order extends BaseEntity {
     private Float total;
 
     @NonNull
+    private String status;
+
+    @NonNull
     @OneToMany
     @JoinColumn(name = "order_id")
     private List<FoodChoices> items;

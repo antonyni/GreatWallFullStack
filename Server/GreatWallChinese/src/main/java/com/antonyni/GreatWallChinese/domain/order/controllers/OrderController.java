@@ -31,7 +31,7 @@ public class OrderController {
         } catch (OrderCreationException e) {
             return ResponseEntity
                     .status(HttpStatus.CONFLICT)
-                    .body(e.getMessage());
+                    .body("Failed to create the order: " + e.getMessage());
         }
     }
 
