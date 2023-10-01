@@ -70,7 +70,7 @@ export default function Home() {
                         <div style={{ height: "100%", width: "60%", display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center" }}>
                             <div style={{ height: "20vw", width: "50vw", position: "relative", backgroundColor: "#7fcd41 ", marginBottom: "5vh", borderRadius: "1vw" }}>
                                 <h1 style={{ marginLeft: "2vw", marginTop: "3vh", fontSize: "2vw" }}>Current Orders</h1>
-                                <div style={{ height: "15vw", width: "50vw", display: "flex", flexWrap: "wrap" }}>
+                                <div style={{ height: "16vw", width: "50vw", display: "flex", flexWrap: "wrap" }}>
                                     {
                                         orderRequests.map((order) => {
                                             return (
